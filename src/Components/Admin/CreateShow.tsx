@@ -191,7 +191,7 @@ function CreateShow() {
                   Select Movie
                 </label>
                 <select
-                  className="w-full rounded border z-10 relative origin-top border-stroke bg-gray py-3 pl-11.5 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary "
+                  className="w-full rounded border z-10 relative origin-bottom border-stroke bg-gray py-3 pl-11.5 pr-4.5 text-black focus:border-primary focus-visible:outline-none dark:border-strokedark dark:bg-meta-4 dark:text-white dark:focus:border-primary "
                   value={selectedMovie}
                   onChange={handleMovieSelection}
                 >
