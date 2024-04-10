@@ -1,0 +1,17 @@
+.slick-prev ,.slick-next{
+    width: 40px;;
+    height: 40px;
+    background-color: rgb(107, 229, 107);
+    color: rgb(16, 15, 15);
+    margin-right: 24px;
+    border-radius: 6px;
+}
+.slick-prev ,.slick-next:hover{
+    background-color: rgb(107, 229, 107);
+    color: rgb(16, 15, 15);
+}
+
+.slick-list{
+    margin-left: 10px;
+    margin-right: 30px;
+}
