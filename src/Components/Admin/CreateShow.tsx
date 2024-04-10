@@ -187,7 +187,7 @@ function CreateShow() {
             </div>
             <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
               <div className="w-full sm:w-1/2  ">
-                <label className="block text-sm font-medium text-black dark:text-white">
+                <label className="block  mb-3 text-sm font-medium text-black dark:text-white">
                   Select Movie
                 </label>
                 <select
@@ -204,7 +204,7 @@ function CreateShow() {
                 </select>
               </div>
               <div className="w-full sm:w-1/2  ">
-                <label className="block text-sm font-medium text-black dark:text-white">
+                <label className="block mb-3 text-sm font-medium text-black dark:text-white">
                   Select Theatre
                 </label>
                 <select

@@ -182,7 +182,7 @@ function CreateTheatre() {
                   <summary className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary ">
                     Select Movies
                   </summary>
-                  <ul className="w-full rounded-lg border border-stroke bg-transparent z-50 py-4 pl-6 pr-10 text-blcak outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                  <ul className=" rounded-lg border bg-white w-80 h-46 overflow-y-auto absolute border-stroke bg-transparent z-50 py-4 pl-6 pr-10 text-blcak outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
                     {allMovies &&
                       allMovies.map((movie, index) => (
                         <div key={index} className="flex items-center ">
