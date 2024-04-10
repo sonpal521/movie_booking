@@ -7,26 +7,29 @@ import getAllMovies, {
 } from "../../Api/Movie/movie"; // Import your API functions
 import Breadcrumb from "../../Components/Admin/Breadcrumbs/Breadcrumb";
 import SidebarLayout from "../../Layouts/SidebarLayout";
-type MovieDetails={
-  name: string;
-  description: string;
-  casts: string[];
-  trailerUrl: string;
-  language: string;
-  director: string;
-  releaseStatus: string;
-  poster: string;
-  releaseDate: string;
- }
+import Movie from "../../Types/Movie";
+// type MovieDetails={
+//   name: string;
+//   description: string;
+//   casts: string[];
+//   trailerUrl: string;
+//   language: string;
+//   director: string;
+//   releaseStatus: string;
+//   poster: string;
+//   releaseDate: string;
+//  }
 
-interface TempMovieDetail extends Omit<MovieDetails, "casts"> {
+interface TempMovieDetail extends Omit<Movie, "casts"> {
+ 
   casts: string[];
+ 
 }
 
 function MovieList() {
   const [tempMovieDetail, setTempMovieDetail] = useState<TempMovieDetail>({
+    _id:"",
     name: "",
-   
     director: "",
     language: "",
     releaseStatus: "RELEASED",
@@ -37,7 +40,7 @@ function MovieList() {
     casts: [],
   });
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [allMovies, setAllMovies] = useState<MovieDetails[]>([]);
+  const [allMovies, setAllMovies] = useState<Movie[]>([]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -56,7 +59,9 @@ function MovieList() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     try {
+      
       const movieId = tempMovieDetail._id; // Adjust this based on how you get the movieId
 
       // Call updateMovieDetail with movieId and tempMovieDetail
@@ -83,7 +88,7 @@ function MovieList() {
 
   const clearState = () => {
     setTempMovieDetail({
-     
+     _id:"",
       name: "",
       director: "",
       language: "",
@@ -100,7 +105,7 @@ function MovieList() {
     fetchMovies();
   }, []);
 
-  const editMovie = (movie: MovieDetails) => {
+  const editMovie = (movie: Movie) => {
     setTempMovieDetail({ ...movie });
     setShowModal(true);
   };
