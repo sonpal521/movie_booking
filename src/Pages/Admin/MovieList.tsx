@@ -7,15 +7,26 @@ import getAllMovies, {
 } from "../../Api/Movie/movie"; // Import your API functions
 import Breadcrumb from "../../Components/Admin/Breadcrumbs/Breadcrumb";
 import SidebarLayout from "../../Layouts/SidebarLayout";
-import Movie from "../../Types/Movie";
+type MovieDetails={
+  name: string;
+  description: string;
+  casts: string[];
+  trailerUrl: string;
+  language: string;
+  director: string;
+  releaseStatus: string;
+  poster: string;
+  releaseDate: string;
+ }
 
-interface TempMovieDetail extends Omit<Movie, "casts"> {
+interface TempMovieDetail extends Omit<MovieDetails, "casts"> {
   casts: string[];
 }
 
 function MovieList() {
   const [tempMovieDetail, setTempMovieDetail] = useState<TempMovieDetail>({
     name: "",
+   
     director: "",
     language: "",
     releaseStatus: "RELEASED",
@@ -26,7 +37,7 @@ function MovieList() {
     casts: [],
   });
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [allMovies, setAllMovies] = useState<Movie[]>([]);
+  const [allMovies, setAllMovies] = useState<MovieDetails[]>([]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -72,6 +83,7 @@ function MovieList() {
 
   const clearState = () => {
     setTempMovieDetail({
+     
       name: "",
       director: "",
       language: "",
@@ -88,7 +100,7 @@ function MovieList() {
     fetchMovies();
   }, []);
 
-  const editMovie = (movie: Movie) => {
+  const editMovie = (movie: MovieDetails) => {
     setTempMovieDetail({ ...movie });
     setShowModal(true);
   };
