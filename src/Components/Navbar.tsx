@@ -46,28 +46,27 @@ function Navbar() {
               )}
             </div>
             {authState.isLoggedIn ? (
-              <a
-                className="rounded-md bg-blue-600 cursor-pointer px-5 py-2.5 text-sm font-medium text-white shadow"
-                onClick={handleLogout}
-              >
-                Logout
-              </a>
+              <Link to="/login"  onClick={handleLogout}  className="rounded-md bg-blue-600 cursor-pointer px-5 py-2.5 text-sm font-medium text-white shadow">
+               Logout
+              </Link>
+            
             ) : (
               <div className="sm:flex sm:gap-4">
-                <a
+                <Link
+                to="/login"
                   className="rounded-md bg-blue-600 cursor-pointer  px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="login"
+                  
                 >
                   Login
-                </a>
+                </Link>
 
                 <div className="hidden sm:flex">
-                  <a
+                  <Link to= "/signup"
                     className="rounded-md bg-indigo-100 cursor-pointer px-5 py-2.5 text-sm font-medium text-blue-600"
-                    href="signup"
+                    
                   >
                     Register
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
